@@ -1,8 +1,9 @@
 import { Global, css } from '@emotion/react';
 import { useTheme } from '@emotion/react';
 import { Routes, Route } from 'react-router-dom';
-
 import { globalStyle } from '@/styles/globalStyle';
+import { PATHS } from '@/constants/paths';
+
 import reset from '@/styles/reset';
 import Layout from '@/components/Layout';
 import CategorySection from '@/components/categorySection';
@@ -34,9 +35,9 @@ function App() {
       />
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/login" element={<LoginForm />} />
-          <Route path="/" element={<MainPage />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path={PATHS.LOGIN} element={<LoginForm />} />
+          <Route path={PATHS.ROOT} element={<MainPage />} />
+          <Route path={PATHS.NOT_FOUND} element={<NotFound />} />
         </Route>
       </Routes>
     </>
